@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Rose | Catálogo Oficial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #FAF6F2;
+            --card-bg: #FFFFFF;
+            --dusty-rose: #D4A3A9;
+            --dusty-rose-dark: #B8888F;
+            --gold: #C5A059;
+            --text-dark: #3D3232;
+            --text-muted: #8C7B7B;
+            --border-color: #EFE6DF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            padding-bottom: 90px;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 24px 16px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .store-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .store-logo span {
+            color: var(--gold);
+        }
+
+        .store-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .categories {
+            display: flex;
+            gap: 8px;
+            padding: 14px 16px;
+            overflow-x: auto;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+
+        .categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .chip {
+            background: var(--bg-cream);
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chip.active, .chip:hover {
+            background: var(--dusty-rose);
+            color: white;
+            border-color: var(--dusty-rose);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            background: #F3EAE3;
+        }
+
+        .card-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 9px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 6px;
+        }
+
+        .floating-wa {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="store-logo">SKY <span>ROSE</span></div>
+        <div class="store-subtitle">Carteras & Accesorios Exclusivos</div>
+    </header>
+
+    <div class="categories">
+        <button class="chip active">Todos</button>
+    </div>
+
+    <div class="container">
+        <div class="grid">
+
+            <!-- Producto 1 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://i.ibb.co/PZkZ8xn8/photo-5176972859719486951-y.jpg" alt="Sky Rose">
+                </div>
+                <div class="card-content">
+                    <div class="product-title">Set Coach</div>
+                    <div class="product-price">$45.00</div>
+                    <a href="https://wa.me/584123752717?text=Hola,%20me%20interesa%20el%20Set%20Coach%20de%20Sky%20Rose" target="_blank" class="btn-whatsapp">
+                        Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://i.ibb.co/1tHFj1NB/photo-5176972859719486950-y.jpg" alt="Sky Rose">
+                </div>
+                <div class="card-content">
+                    <div class="product-title">Tery Negra</div>
+                    <div class="product-price">$37.00</div>
+                    <a href="https://wa.me/584123752717?text=Hola,%20me%20interesa%20la%20Tery%20Negra%20de%20Sky%20Rose" target="_blank" class="btn-whatsapp">
+                        Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://i.ibb.co/9HsmPFGy/photo-5176972859719486949-x.jpg" alt="Sky Rose">
+                </div>
+                <div class="card-content">
+                    <div class="product-title">Tery Estampada en Negro</div>
+                    <div class="product-price">$36.00</div>
+                    <a href="https://wa.me/584123752717?text=Hola,%20me%20interesa%20la%20Tery%20Estampada%20en%20Negro%20de%20Sky%20Rose" target="_blank" class="btn-whatsapp">
+                        Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://i.ibb.co/rK1V9fwg/photo-5176972859719486948-y.jpg" alt="Sky Rose">
+                </div>
+                <div class="card-content">
+                    <div class="product-title">Klare Blanca</div>
+                    <div class="product-price">$37.00</div>
+                    <a href="https://wa.me/584123752717?text=Hola,%20me%20interesa%20la%20Klare%20Blanca%20de%20Sky%20Rose" target="_blank" class="btn-whatsapp">
+                        Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://i.ibb.co/6cVhbsfH/photo-5176972859719486947-y.jpg" alt="Sky Rose">
+                </div>
+                <div class="card-content">
+                    <div class="product-title">Tery Estampada en Blanco</div>
+                    <div class="product-price">$37.00</div>
+                    <a href="https://wa.me/584123752717?text=Hola,%20me%20interesa%20la%20Tery%20Estampada%20en%20Blanco%20de%20Sky%20Rose" target="_blank" class="btn-whatsapp">
+                        Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://i.ibb.co/1gN9ZW7/photo-5176972859719486946-y.jpg" alt="Sky Rose">
+                </div>
+                <div class="card-content">
+                    <div class="product-title">Tery de Brillos</div>
+                    <div class="product-price">$40.00</div>
+                    <a href="https://wa.me/584123752717?text=Hola,%20me%20interesa%20la%20Tery%20de%20Brillos%20de%20Sky%20Rose" target="_blank" class="btn-whatsapp">
+                        Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="
